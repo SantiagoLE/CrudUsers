@@ -82,7 +82,8 @@
 }
 
 .user_footer-delete-title {
-margin-bottom: 0.25em;    font-size: 1.5em;
+margin-bottom: 0.25em;   
+ font-size: 1.2em;
     font-weight: 400;
 }
 
@@ -90,7 +91,7 @@ margin-bottom: 0.25em;    font-size: 1.5em;
     display: flex;
     gap: 0.3em;
     margin-left: 0.4em;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .bx-check-circle {

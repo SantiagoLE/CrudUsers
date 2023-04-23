@@ -61,7 +61,7 @@ const handleNotDelete = () => {
             : <div className="user_footer-delete">
             <h5 className='user_footer-delete-title'>Delete this user?</h5>
             <div className='user_footer-delete-btns'>
-              <i onClick={handleDelete} class='bx bx-check-circle'></i>
+              <i onClick={handleDelete} className='bx bx-check-circle'></i>
               <i onClick={handleNotDelete} className='bx bx-x-circle circle_user'></i>
             </div>
           </div>

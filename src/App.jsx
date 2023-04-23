@@ -9,9 +9,8 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
   const [formClose, setFormClose] = useState(true)
-  const [deleteUser, setDeleteUser] = useState(false)
 
-  const { users, getAllUsers, createNewUser, deleteUserByID, updateUserByID } = useUserCrud()
+  const { users, getAllUsers, createNewUser, deleteUserByID, updateUserByID, userError } = useUserCrud()
 
 
   useEffect(() => {
@@ -39,6 +38,7 @@ const handleFormClose = () =>{
         setUpdateInfo={setUpdateInfo}
         formClose={formClose}
         setFormClose={setFormClose}
+        userError={userError}
       />
       <div className='card_content'>
         {

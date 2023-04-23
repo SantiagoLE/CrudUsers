@@ -4,6 +4,7 @@ import { useState } from "react"
 const useUserCrud = () =>{
 
     const [users, setUsers] = useState()
+    const [userError, setUserError] = useState(false)
 
     const url = `https://users-crud.academlo.tech/users/`
 
@@ -20,8 +21,13 @@ const createNewUser = (data) => {
     axios.post(url, data)
     .then(res => {
         console.log(res);
-        getAllUsers()})
-    .catch(err => console.log(err))
+        getAllUsers()
+    setUserError(false)
+    })
+    .catch(err => {
+        console.log(err)
+    setUserError(true)
+    })
     
 }
 
@@ -42,7 +48,7 @@ const updateUserByID = (id, data) => {
 }
 
 
-return {users, getAllUsers, createNewUser, deleteUserByID, updateUserByID}
+return {users, getAllUsers, createNewUser, deleteUserByID, updateUserByID, userError}
 
 
 
