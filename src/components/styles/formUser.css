@@ -1,7 +1,7 @@
 .form_containt{
     position: fixed;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     background: #2121212f;
         backdrop-filter: blur(1.5px);
     z-index: 100;
@@ -10,13 +10,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    transition: transform 150ms;
+}
+
+.close{
+   transform: scale(0);
+}
+
+.active{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #2121212f;
+        backdrop-filter: blur(1.5px);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: display 5s;
 }
 
 .form{
+    position: relative;
 background-color: white;
 width: 100%;
-max-width: 300px;
+max-width: 320px;
 border-radius: 1em;
 padding: 1em;
 display: grid;
@@ -24,10 +44,45 @@ gap: 0.8em;
 }
 
 .form_title{
-    margin: 0 auto;
+    margin: 0.5em auto;
     font-size: 2rem;
+}
+
+.bx-x-circle{
+position: absolute;
+top: 0.8em;
+right: 0.8em;
+font-size: 1.25em;
+transition: color 200ms ease;
+}
+
+.bx-x-circle:hover{
+    color: red;
 }
 
 .form_item{
     display: grid;
+    gap: 4px;
+}
+
+.form_label{
+    margin-left: 0.5em;
+}
+
+.form_input{
+    padding:  0.3em;
+    font-weight: 300;
+}
+
+.form_btn{
+    background: #555A88;
+height: 30px;
+color: white;
+border-radius: 0.5rem;
+font-size: 1rem;
+margin: 1.5em 0;
+}
+
+.form_btn:hover{
+    filter: brightness(1.15);
 }

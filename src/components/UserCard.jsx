@@ -3,7 +3,9 @@ import "./styles/userCard.css"
 
 
 
-const UserCard = ({ user, deleteUserByID, setUpdateInfo }) => {
+const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose }) => {
+
+  
 
   const handleDelete = () => {
     deleteUserByID(user.id)
@@ -13,14 +15,18 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo }) => {
     setUpdateInfo(user)
   }
 
+  const handleFormOpen = () => {
+    setFormClose(false)
+}
+
   return (
     <article className='user'>
-      <h2 className='user_name'>{user.firs_name} {user.last_name}</h2>
+      <h2 className='user_name'>{user.first_name} {user.last_name}</h2>
       <ul className='user_list'>
         <li className='user_item'>
           <span className='user_label'>EMAIL</span>
           <div className='user_value-content'>
-            <i class='bx bx-envelope'></i>
+            <i className='bx bx-envelope'></i>
             <span className='user_value-email'>{user.email}</span>
           </div>
         </li>
@@ -28,7 +34,7 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo }) => {
         <li className='user_item'>
           <span className='user_label'>BIRTHDAY</span>
           <div className='user_value-content'>
-            <i class='bx bx-gift'></i>
+            <i className='bx bx-gift'></i>
             <span className='user_value-birthday'>{user.birthday}</span>
           </div>
         </li>
@@ -38,7 +44,7 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo }) => {
 
       <footer className='user_footer'>
         <button className='user_btn user_delete' ><i onClick={handleDelete} className='bx bx-trash'></i></button>
-        <button className='user_btn user_update' ><i onClick={handleUpdate} className='bx bx-edit-alt'></i></button>
+        <button className='user_btn user_update' ><i onClick={() => {handleUpdate(); handleFormOpen()}} className='bx bx-edit-alt'></i></button>
       </footer>
     </article>
 

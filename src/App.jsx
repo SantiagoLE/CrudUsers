@@ -8,6 +8,7 @@ import FormUser from './components/FormUser'
 function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
+  const [formClose, setFormClose] = useState(true)
 
   const { users, getAllUsers, createNewUser, deleteUserByID, updateUserByID } = useUserCrud()
 
@@ -16,15 +17,17 @@ function App() {
     getAllUsers()
   }, [])
 
-
+const handleFormClose = () =>{
+  setFormClose(false)
+}
 
   return (
     <div className="App">
       <header className='app_header' >
         <h1 className='app_title'>Users</h1>
         <div className='app_btn-content'>
-          <i class='bx bx-plus'></i>
-          <button className='app_btn-name'>Create New User</button>
+          <i className='bx bx-plus'></i>
+          <button onClick={handleFormClose} className='app_btn-name'>Create New User</button>
         </div>
       </header >
 
@@ -33,6 +36,8 @@ function App() {
         updateInfo={updateInfo}
         updateUserByID={updateUserByID}
         setUpdateInfo={setUpdateInfo}
+        formClose={formClose}
+        setFormClose={setFormClose}
       />
       <div className='card_content'>
         {
@@ -42,6 +47,7 @@ function App() {
               user={user}
               deleteUserByID={deleteUserByID}
               setUpdateInfo={setUpdateInfo}
+              setFormClose={setFormClose}
 
             />
           ))
