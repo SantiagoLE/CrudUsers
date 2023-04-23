@@ -1,0 +1,44 @@
+/* .App{
+    padding: 2em;
+} */
+
+.app_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+    .app_title{
+font-size: 3em;
+    }
+
+    .app_btn-content{
+        background: #555A88;
+        width: 100%;
+        max-width: 150px;
+        height: 30px;
+       font-size: 1rem;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 0 10px;
+       border-radius: 1em;
+    }
+
+.bx-plus{
+font-size: 1.3em;
+color: white;
+}
+
+    .app_btn-name{
+        background-color: inherit;
+        margin-bottom: 3px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: white;
+    }
+
+   
+
+    

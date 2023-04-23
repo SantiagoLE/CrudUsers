@@ -1,0 +1,33 @@
+.form_containt{
+    position: fixed;
+    width: 100vw;
+    min-height: 100vh;
+    background: #2121212f;
+        backdrop-filter: blur(1.5px);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.form{
+background-color: white;
+width: 100%;
+max-width: 300px;
+border-radius: 1em;
+padding: 1em;
+display: grid;
+gap: 0.8em;
+}
+
+.form_title{
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.form_item{
+    display: grid;
+}

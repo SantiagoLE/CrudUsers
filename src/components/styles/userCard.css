@@ -1,0 +1,88 @@
+.card_content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;    
+    gap: 1rem;
+    padding: 0 1em 0 1em;
+}
+
+
+.user{
+    border: 0.05em solid black;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 0.8em;
+    transition: transform 200ms ease;
+}
+
+.user:hover{
+    transform: scale(1.02);
+}
+
+.user_name{
+font-weight: 400;
+margin-bottom: 0.7em;
+}
+
+.user_list{
+    display: grid;
+    gap: 0.8rem;
+}
+
+.user_item{
+    display: grid;
+}
+
+.user_label{
+    padding-left: 1em;
+    color: #756767c7;
+font-size: 0.9rem;
+}
+
+.user_value-content{
+    display: flex;
+    align-items: center;
+}
+
+.user_value-content> .bx{
+    margin-right: 0.5em;
+}
+
+.user_value-email{
+    margin-bottom: 5px;
+}
+
+.user_hr{
+border: 1px solid rgba(0, 0, 0, 0.5);
+opacity: 0.5;
+}
+
+.user_footer{
+display: flex;
+justify-content: end;
+gap: 0.8em;
+}
+
+.user_btn{
+    font-size: 1.2rem;
+    background-color: inherit;
+    border-radius: 0.2em;
+    transition: box-shadow 200ms, filter 200ms;
+}
+
+.user_btn:hover{
+    filter: brightness(1.05);
+    box-shadow: 0 0 0.15em black;
+}
+
+.user_delete{
+    background: #D85D5D;
+    color: white;
+}
+
+.user_update{
+    color: #756767c7;
+    border: 0.05em solid currentColor;
+}
