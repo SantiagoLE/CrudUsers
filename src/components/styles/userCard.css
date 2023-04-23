@@ -1,14 +1,14 @@
-.card_content{
+.card_content {
     display: flex;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     gap: 1rem;
-    padding: 0 1em 0 1em;
+    padding: 0 1em 1em 1em;
 }
 
 
-.user{
+.user {
     border: 0.05em solid black;
     border-radius: 1rem;
     width: 100%;
@@ -17,72 +17,114 @@
     transition: transform 200ms ease;
 }
 
-.user:hover{
+.user:hover {
     transform: scale(1.02);
 }
 
-.user_name{
-font-weight: 400;
-margin-bottom: 0.7em;
+.user_name {
+    font-weight: 400;
+    margin-bottom: 0.7em;
 }
 
-.user_list{
+.user_list {
     display: grid;
     gap: 0.8rem;
 }
 
-.user_item{
+.user_item {
     display: grid;
 }
 
-.user_label{
+.user_label {
     padding-left: 1em;
     color: #756767c7;
-font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
-.user_value-content{
+.user_value-content {
     display: flex;
     align-items: center;
 }
 
-.user_value-content> .bx{
+.user_value-content>.bx {
     margin-right: 0.5em;
 }
 
-.user_value-email{
+.user_value-email {
     margin-bottom: 5px;
 }
 
-.user_hr{
-border: 1px solid rgba(0, 0, 0, 0.5);
-opacity: 0.5;
+.user_hr {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
 }
 
-.user_footer{
-display: flex;
-justify-content: end;
-gap: 0.8em;
+.user_footer {
+    height: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.3em;
 }
 
-.user_btn{
+.user_footer-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+
+.user_footer-delete-close {
+    transform: scale(0);
+}
+
+.user_footer-delete-title {
+margin-bottom: 0.25em;    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.user_footer-delete-btns {
+    display: flex;
+    gap: 0.3em;
+    margin-left: 0.4em;
+    font-size: 1.7em;
+}
+
+.bx-check-circle {
+    color: green;
+}
+
+.circle_user{
+    color:red;
+}
+
+.bx-check-circle:hover , .circle_user:hover{
+    transform: scale(1.2);
+}
+
+
+
+.user_btn {
     font-size: 1.2rem;
     background-color: inherit;
     border-radius: 0.2em;
     transition: box-shadow 200ms, filter 200ms;
 }
 
-.user_btn:hover{
+.user_btn:hover {
     filter: brightness(1.05);
     box-shadow: 0 0 0.15em black;
 }
 
-.user_delete{
+.user_delete {
     background: #D85D5D;
     color: white;
 }
 
-.user_update{
+.user_update {
     color: #756767c7;
     border: 0.05em solid currentColor;
 }

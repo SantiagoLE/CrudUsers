@@ -9,6 +9,7 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
   const [formClose, setFormClose] = useState(true)
+  const [deleteUser, setDeleteUser] = useState(false)
 
   const { users, getAllUsers, createNewUser, deleteUserByID, updateUserByID } = useUserCrud()
 

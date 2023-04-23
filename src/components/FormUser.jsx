@@ -39,10 +39,10 @@ const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, fo
    
 
     return (
-        <div className={`form_containt ${formClose && "close"}`}>
+        <div className={`form_containt ${formClose && "form_containt-close"}`}>
             <form className='form' onSubmit={handleSubmit(submit)}>
                 <h3 className='form_title'>{updateInfo ? "Update User Info" : "Create New User"}</h3>
-                <i onClick={handleFormClosed} className='bx bx-x-circle'></i>
+                <i onClick={handleFormClosed} className='bx bx-x-circle circle_form'></i>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="email">Email</label>
                     <input className='form_input' {...register("email")} type="email" id='email' />

@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles/userCard.css"
 
 
 
 const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose }) => {
 
-  
+  const [deleteUser, setDeleteUser] = useState(true)
 
   const handleDelete = () => {
-    deleteUserByID(user.id)
+     deleteUserByID(user.id)
   }
 
   const handleUpdate = () => {
@@ -17,6 +17,14 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose }) => {
 
   const handleFormOpen = () => {
     setFormClose(false)
+  }
+
+  const handleCheckDelete = () => {
+    setDeleteUser(false)
+  }
+
+const handleNotDelete = () => {
+  setDeleteUser(true)
 }
 
   return (
@@ -43,8 +51,24 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose }) => {
       <hr className='user_hr' />
 
       <footer className='user_footer'>
-        <button className='user_btn user_delete' ><i onClick={handleDelete} className='bx bx-trash'></i></button>
-        <button className='user_btn user_update' ><i onClick={() => {handleUpdate(); handleFormOpen()}} className='bx bx-edit-alt'></i></button>
+        {
+          deleteUser
+            ?  <>
+              <button className='user_btn user_delete' ><i onClick={handleCheckDelete} className='bx bx-trash'></i></button>
+              <button className='user_btn user_update' ><i onClick={() => { handleUpdate(); handleFormOpen() }} className='bx bx-edit-alt'></i></button>
+            </>
+
+            : <div className="user_footer-delete">
+            <h5 className='user_footer-delete-title'>Delete this user?</h5>
+            <div className='user_footer-delete-btns'>
+              <i onClick={handleDelete} class='bx bx-check-circle'></i>
+              <i onClick={handleNotDelete} className='bx bx-x-circle circle_user'></i>
+            </div>
+          </div>
+
+        }
+
+
       </footer>
     </article>
 
