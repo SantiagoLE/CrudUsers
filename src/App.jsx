@@ -12,14 +12,14 @@ function App() {
 
   const { users, getAllUsers, createNewUser, deleteUserByID, updateUserByID, userError } = useUserCrud()
 
-
+  console.log(users?.length);
   useEffect(() => {
     getAllUsers()
   }, [])
 
-const handleFormClose = () =>{
-  setFormClose(false)
-}
+  const handleFormClose = () => {
+    setFormClose(false)
+  }
 
   return (
     <div className="App">
@@ -30,6 +30,13 @@ const handleFormClose = () =>{
           <button onClick={handleFormClose} className='app_btn-name'>Create New User</button>
         </div>
       </header >
+      {users?.length === 0 &&
+        <div className='app_noUsers-containt'>
+          <h2 className='app_NoUsers'>¡ No users, Please create a user !</h2>
+        </div>
+
+
+      }
 
       <FormUser
         createNewUser={createNewUser}

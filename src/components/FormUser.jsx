@@ -7,7 +7,6 @@ import "./styles/formUser.css"
 const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, formClose, setFormClose, userError }) => {
 
     const { register, handleSubmit, reset, formState: { errors }  } = useForm()
-    const [formErrors, setFormErrors] = useState(false)
 
     useEffect(() => {
         reset(updateInfo)
