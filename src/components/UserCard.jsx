@@ -3,12 +3,19 @@ import "./styles/userCard.css"
 
 
 
-const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose }) => {
+const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose, setSuccessClose }) => {
 
   const [deleteUser, setDeleteUser] = useState(true)
 
   const handleDelete = () => {
      deleteUserByID(user.id)
+     setSuccessClose(false)
+
+     const closeSuccess = () => {
+      setSuccessClose(true)
+    };
+    
+    setTimeout(closeSuccess, 2500);
   }
 
   const handleUpdate = () => {
