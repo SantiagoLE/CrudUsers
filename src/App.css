@@ -1,7 +1,7 @@
 .App {
     background-color: rgba(21, 43, 57, 0.391);
     width: 100%;
-    min-height: 100vh;    
+    min-height: 100vh;
 }
 
 .app_header {
@@ -17,39 +17,35 @@
     font-size: 3em;
 }
 
-.app_btn-content {
-    background-color: #394081;
-    width: 100%;
-    max-width: 150px;
-    height: 40px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    border-radius: 1em;
-    transition: transform 200ms ease;
-}
-
-.app_btn-content:hover {
-    filter: brightness(1.1);
-    transform: scale(1.05);
-}
-
 .bx-plus {
     font-size: 1.3em;
     color: white;
 }
 
-.app_btn-name {
-    background-color: inherit;
-    margin-bottom: 3px;
+.app_btn {
+    width: 100%;
+    max-width: 150px;
+    background-color: #394081;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
     font-size: 0.9rem;
     font-weight: 500;
     color: white;
+    padding: 0.5em 0;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.2em black;
+    transition: transform 200ms ease;
+
 }
 
-.app_noUsers-containt{
+.app_btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+.app_noUsers-containt {
     background-color: transparent;
     width: 100%;
     min-height: 100vh;
@@ -58,7 +54,7 @@
     align-items: center;
 }
 
-.app_NoUsers{
+.app_NoUsers {
     text-align: center;
     font-size: 2.5rem;
     text-shadow: 0.1em 0.1em 0.1em rgba(26, 24, 24, 0.719);

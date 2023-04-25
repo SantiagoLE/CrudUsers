@@ -25,10 +25,9 @@ function App() {
     <div className="App">
       <header className='app_header' >
         <h1 className='app_title'>Users</h1>
-        <div className='app_btn-content'>
-          <i className='bx bx-plus'></i>
-          <button onClick={handleFormClose} className='app_btn-name'>Create New User</button>
-        </div>
+        <button onClick={handleFormClose} className='app_btn'>
+          <i className='bx bx-plus'></i>Create New User</button>
+          
       </header >
       {users?.length === 0 &&
         <div className='app_noUsers-containt'>
