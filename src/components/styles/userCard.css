@@ -11,14 +11,15 @@
 
 
 .user {
-    border: 0.05em solid black;
-    background-color: #0635b561;
+    border: 0.05em solid rgb(155, 151, 151);
+    background: linear-gradient(to right, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 18%, rgba(47,46,45,1) 47%, rgba(77,77,76,1) 77%, rgba(99,99,99,1) 100%);
     border-radius: 1rem;
-    box-shadow: 0.15em 0.15em  rgb(37, 25, 25);
+    box-shadow: 0.3em 0.3em 0.3em rgb(185, 179, 179);
     width: 100%;
     max-width: 320px;
     padding: 0.8em;
     transition: transform 200ms ease;
+    position: relative;
 }
 
 .user:hover {
@@ -28,6 +29,7 @@
 .user_name {
     font-weight: 400;
     margin-bottom: 0.7em;
+    color: white;
 }
 
 .user_list {
@@ -41,7 +43,7 @@
 
 .user_label {
     padding-left: 1em;
-    color: #1a1313c7;
+    color: #a89f9fc7;
     font-size: 0.9rem;
 }
 
@@ -56,6 +58,15 @@
 
 .user_value-email {
     margin-bottom: 5px;
+    color: white;
+}
+
+.user_value-birthday{
+    color: white;
+}
+
+.bx-envelope, .bx-gift{
+    color: #a89f9fc7;
 }
 
 .user_hr {
@@ -132,4 +143,11 @@ margin-bottom: 0.25em;
 .user_update {
     color: #1a1313c7;
     border: 0.05em solid currentColor;
+}
+
+.user_img{
+    width: 150px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }

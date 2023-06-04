@@ -5,7 +5,7 @@ const useUserCrud = () =>{
 
     const [users, setUsers] = useState()
     const [userError, setUserError] = useState(false)
-
+console.log(users)
     const url = `https://users-crud.academlo.tech/users/`
 
 

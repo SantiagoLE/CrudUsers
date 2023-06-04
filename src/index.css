@@ -24,6 +24,7 @@ ul{
 input{
     outline: none;
     font-family: inherit;
+    cursor: pointer;
 }
 
 button{

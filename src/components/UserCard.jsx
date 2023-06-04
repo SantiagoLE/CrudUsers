@@ -8,14 +8,18 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose, setSucces
   const [deleteUser, setDeleteUser] = useState(true)
 
   const handleDelete = () => {
-     deleteUserByID(user.id)
-     setSuccessClose(false)
+    deleteUserByID(user.id)
+    setSuccessClose(false)
 
-     const closeSuccess = () => {
+    const closeSuccess = () => {
       setSuccessClose(true)
     };
-    
+
     setTimeout(closeSuccess, 2500);
+  }
+
+  const handleNotDelete = () => {
+    setDeleteUser(true)
   }
 
   const handleUpdate = () => {
@@ -30,9 +34,7 @@ const UserCard = ({ user, deleteUserByID, setUpdateInfo, setFormClose, setSucces
     setDeleteUser(false)
   }
 
-const handleNotDelete = () => {
-  setDeleteUser(true)
-}
+
 
   return (
     <article className='user'>
@@ -60,21 +62,23 @@ const handleNotDelete = () => {
       <footer className='user_footer'>
         {
           deleteUser
-            ?  <>
+            ? <>
               <button className='user_btn user_delete' ><i onClick={handleCheckDelete} className='bx bx-trash'></i></button>
               <button className='user_btn user_update' ><i onClick={() => { handleUpdate(); handleFormOpen() }} className='bx bx-edit-alt'></i></button>
             </>
 
             : <div className="user_footer-delete">
-            <h5 className='user_footer-delete-title'>Delete this user?</h5>
-            <div className='user_footer-delete-btns'>
-              <i onClick={handleDelete} className='bx bx-check-circle'></i>
-              <i onClick={handleNotDelete} className='bx bx-x-circle circle_user'></i>
+              <h5 className='user_footer-delete-title'>Delete this user?</h5>
+              <div className='user_footer-delete-btns'>
+                <i onClick={handleDelete} className='bx bx-check-circle'></i>
+                <i onClick={handleNotDelete} className='bx bx-x-circle circle_user'></i>
+              </div>
             </div>
-          </div>
 
         }
-
+{/* <div className='user_img-container'> */}
+<img className='user_img' src="/cardIcon.png" alt="" />
+{/* </div> */}
 
       </footer>
     </article>

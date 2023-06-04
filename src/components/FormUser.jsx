@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import defaultValues from '../utils/defaultValues'
 import "./styles/formUser.css"
 
 
-const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, formClose, setFormClose, userError }) => {
+const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, formClose, setFormClose }) => {
 
     const { register, handleSubmit, reset, formState: { errors }  } = useForm()
+    console.log(updateInfo)
 
     useEffect(() => {
         reset(updateInfo)
@@ -48,7 +49,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, fo
                 <i onClick={handleFormClosed} className='bx bx-x-circle circle_form'></i>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="email">Email</label>
-                    <input className='form_input' {...register("email", {required: true})} type="email" id='email' placeholder={errors.email && "Required field"}/>
+                    <input className='form_input' {...register("email", {required: true})} type="email" id='email' placeholder={errors.email && "Required field"} autoComplete='off'/>
                 </div>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="password">Password</label>
@@ -56,15 +57,15 @@ const FormUser = ({ createNewUser, updateInfo, updateUserByID, setUpdateInfo, fo
                 </div>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="first_name">First Name</label>
-                    <input className='form_input' {...register("first_name", {required: true})} type="text" id='first_name' placeholder={errors.first_name && "Required field"}/>
+                    <input className='form_input' {...register("first_name", {required: true})} type="text" id='first_name' placeholder={errors.first_name && "Required field"} autoComplete='off'/>
                 </div>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="last_name">Last Name</label>
-                    <input className='form_input' {...register("last_name", {required: true})} type="text" id='last_name' placeholder={errors.last_name && "Required field"}/>
+                    <input className='form_input' {...register("last_name", {required: true})} type="text" id='last_name' placeholder={errors.last_name && "Required field"} autoComplete='off'/>
                 </div>
                 <div className='form_item'>
                     <label className='form_label' htmlFor="birthday">Birthday</label>
-                    <input className='form_input' {...register("birthday", {required: true})} type="date" id='birthday' placeholder={errors.birthday && "Required field"}/>
+                    <input className='form_input input_date' {...register("birthday", {required: true})} type="date" id='birthday' placeholder={errors.birthday && "Required field"}/>
                 </div>
                 <button onClick={handleFormCreateAndUpdate} className='form_btn'>{updateInfo ? "Update" : "Create"}</button>
 
